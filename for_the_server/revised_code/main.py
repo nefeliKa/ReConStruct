@@ -7,6 +7,8 @@ import os
 import pprint
 import math
 
+### This should be called from the "for the server/revised_code directory"
+
 #########################################################   INPUTS  #################################################################
 
 # Directory specified by user to save output files
@@ -27,7 +29,6 @@ print('---')
 
 # Read the DataFrame from your source, for example, a CSV file
 df = pd.read_csv(os.path.join(folder_path, 'Dataframe2.csv'))
-
 
 # Inputs prompted for the user
 
