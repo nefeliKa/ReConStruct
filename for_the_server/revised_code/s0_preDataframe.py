@@ -53,6 +53,19 @@ def assign_coordinates_and_distance(lat_1,lon_1):
 # print(locations_warehouses)
 
 
+def assign_coordinates_and_distance213123(lat_1,lon_1):
+    wh_coords = [[37.455, 37.7232], [37.3564, 36.6886],[37.6632, 38.1566],[37.3769, 37.3576], [37.062, 37.0322],[37.7208, 37.0404],[37.8338, 36.4032],[37.4562, 36.3415]]
+
+    locations_warehouses = {}
+    for name, wh_coord in zip (warehouses, wh_coords):
+        lat_2 = wh_coord[0]
+        lon_2 = wh_coord[1]
+        distance = haversine_distance(lat_1,lon_1,lat_2,lon_2)
+        locations_warehouses[name]= {}
+        locations_warehouses[name]['coordinates'] = wh_coord
+        locations_warehouses[name]['distance'] = distance
+    return locations_warehouses
+
 ######################################################## DISPLAY ###########################################
 def display(folder_path, folder_path_user, locations_warehouses, lat_1, lon_1):
     # Create a map centered at a specific location (e.g., latitude and longitude)
@@ -90,7 +103,7 @@ def display(folder_path, folder_path_user, locations_warehouses, lat_1, lon_1):
     # Add custom marker with label for the home location
     custom_icon = folium.CustomIcon(
         icon_image=os.path.join(folder_path, 'warehouse_location_markers', 'home.png'),
-        icon_size=(40, 40)
+        icon_size=(30, 30)
     )
     folium.Marker(
         location=(lat_1, lon_1),
@@ -149,11 +162,3 @@ def warehouse_combinations(warehouses,locations_warehouses):
         return combinations_wh       
     combinations_wh = filtering_warehouse_combinations(locations_warehouses,combinations_wh=combinations_wh)
     return combinations_wh
-        
-               
-
-
-# print('---')
-# pp.pprint(combinations_wh_new)
-# print(f"old has {len(combinations_wh)}")
-# print(f"new has {len(combinations_wh_new)}")
