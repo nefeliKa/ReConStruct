@@ -128,3 +128,8 @@ def dataframe_to_dictionary(dataframe, tolerance):
             new_dict_list[group_name] = group   
             
     return new_dict_list 
+
+
+if __name__ == "__main__":
+    # Generate the pickle thing
+    print()

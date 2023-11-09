@@ -10,12 +10,11 @@ import math
 ### This should be called from the "for the server/revised_code directory"
 
 #########################################################   INPUTS  #################################################################
-
 # Directory specified by user to save output files
 folder_path_user =  r"D:/OneDrive - Delft University of Technology/CORE/python files/final"
 
 # Directory for accessing the database and markers of the map. This may be on a server
-folder_path =  r"D:/OneDrive - Delft University of Technology/CORE/python files/revised_code"
+folder_path_server = os.path.dirname(os.path.realpath(__file__))
 
 # Record the start time
 start_time = time.time()
@@ -28,39 +27,39 @@ print('---')
 
 
 # Read the DataFrame from your source, for example, a CSV file
-df = pd.read_csv(os.path.join(folder_path, 'Dataframe2.csv'))
+df = pd.read_csv(os.path.join(folder_path_server, 'Dataframe2.csv'))
 
 # Inputs prompted for the user
 
-user_input = input('Place required number of houses here: (eg to choose 68 houses, type "68")')
-print(f"Required number of houses is {user_input}")
-minimum_nohouses = int(user_input)
+# user_input = input('Place required number of houses here: (eg to choose 68 houses, type "68")')
+# print(f"Required number of houses is {user_input}")
+minimum_nohouses =  68 # int(user_input)
 print('---')
 # if minimum_nohouses < 5 : 
 #     print('This amount is less than the possible limit')
 
 print("------------------Let's specify the location of your houses------------------")
 print('---')
-user_input = input('Enter latitude and longitude: (eg for a particualar location in Kahramanmaras, Turkey, type "37.5419,36.8324"')
-lat_1, lon_1 = map(float, user_input.split(','))
+# user_input = input('Enter latitude and longitude: (eg for a particualar location in Kahramanmaras, Turkey, type "37.5419,36.8324"')
+lat_1, lon_1 = 37.5419,36.8324
 print(f"The location is {lat_1} , {lon_1}")
 print('---')
 
 print("------------------Let's specify the footprint of your houses------------------")
 print('---')
-user_input = input('Please specify x dimension in metres: (eg to choose 10 metres type "10")')
-print(f"x dimension is {user_input} metres")
-x_axis_length = int(user_input)
+# user_input = input('Please specify x dimension in metres: (eg to choose 10 metres type "10")')
+# print(f"x dimension is {user_input} metres")
+x_axis_length = 10 #int(user_input)
 print('---')
 
-user_input = input('Please specify y dimension in metres: (eg to choose 20 metres type "20")')
-print(f"y dimension is {user_input} metres")
-y_axis_length = int(user_input)
+# user_input = input('Please specify y dimension in metres: (eg to choose 20 metres type "20")')
+# print(f"y dimension is {user_input} metres")
+y_axis_length = 20# int(user_input)
 print('---')
 
-user_input = input('Please specify tolerance for deviation from given dimensions in metres: (eg to choose 1 metres type "1")')
-print(f"tolerance is {user_input} metres")
-axis_tolerance = float(user_input)
+# user_input = input('Please specify tolerance for deviation from given dimensions in metres: (eg to choose 1 metres type "1")')
+# print(f"tolerance is {user_input} metres")
+axis_tolerance = 1.0 #float(user_input)
 print('---')
 
 
@@ -131,7 +130,7 @@ warehouses = ["Warehouse_1", "Warehouse_2", "Warehouse_3", "Warehouse_4", "Wareh
 from s0_preDataframe import assign_coordinates_and_distance,display,warehouse_combinations
 
 locations_warehouses = assign_coordinates_and_distance(lat_1,lon_1)
-display(folder_path=folder_path,folder_path_user = folder_path_user, locations_warehouses=locations_warehouses,lat_1=lat_1,lon_1=lon_1)
+display(folder_path=folder_path_server,folder_path_user = folder_path_user, locations_warehouses=locations_warehouses,lat_1=lat_1,lon_1=lon_1)
 combinations_wh = warehouse_combinations(warehouses=warehouses,locations_warehouses=locations_warehouses)
 
 ###############################     DATAFRAME TO DICTIONARY     ############################
