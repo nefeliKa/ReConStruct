@@ -1,6 +1,7 @@
 ################################       IMPORT DATABASE 2 AS CSV INTO DICTIONARY AND CLEAN    ##########################################
 import pandas as pd
 import numpy as np
+import csv
 
 def lengths_into_groups(dataframe, tolerance):
     lengths = list(dataframe['lengths'])
@@ -66,8 +67,16 @@ def lengths_into_groups(dataframe, tolerance):
     for group in new_groups: 
         unique_group_numbers = list(set(group))
         unique_group_numbers.sort()
-        beam_groups.append(unique_group_numbers)      
+        beam_groups.append(unique_group_numbers)   
+        
+        file_name = "beam_groups.csv"
+
+    # Writing to CSV file in one line
+    csv.writer(open(file_name, 'w', newline='')).writerows(beam_groups)
+           
     return beam_groups
+
+
 
 '''
     # DESCRIPTION: 
