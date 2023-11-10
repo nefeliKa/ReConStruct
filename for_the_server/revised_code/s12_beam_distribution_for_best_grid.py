@@ -19,29 +19,9 @@ import csv
 pp = pprint.PrettyPrinter()
 
 
-# Record the start time
-start_time = time.time()
 
 # print('\n','---this code:  S_12 BEAM DISTRIBUTION FOR BEST GRID starts here---','\n')
 
-
-# Specify the file path where you saved the dictionary
-file_path = "D:\OneDrive - Delft University of Technology\CORE\python files\Script_28_10_2023\grid_master_3.pkl"
-# Load the dictionary from the file using Pickle
-with open(file_path, 'rb') as file:
-    grid_p_master_3 = pickle.load(file)
-
-
-# Specify the file path where you saved the dictionary
-file_path = "D:\OneDrive - Delft University of Technology\CORE\python files\Script_28_10_2023\grid_master_2.pkl"
-# Load the dictionary from the file using Pickle
-with open(file_path, 'rb') as file:
-    grid_p_master_2 = pickle.load(file)
-
-
-
-# Read the DataFrame from your source, for example, a CSV file
-df = pd.read_csv("D:\OneDrive - Delft University of Technology\CORE\python files\Script_28_10_2023\Dataframe2.csv")
 
 '''
 grid = grid_p_master_3['grid_6803']
@@ -52,8 +32,6 @@ wh = ['Warehouse_1','Warehouse_2','Warehouse_4','Warehouse_5', 'Warehouse_6', 'W
 print(grid['tra_qty_req']['x']['B4'])
 print(grid['tra_qty_req_h']['x']['B4'])
 '''
-
-
 def reorder_alternate(x):
     '''
     # DESCRIPTION: reorders a list. Works if len(x) is odd or even 

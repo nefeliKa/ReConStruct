@@ -11,7 +11,7 @@ import math
 
 #########################################################   INPUTS  #################################################################
 # Directory specified by user to save output files
-folder_path_user =  r"D:/OneDrive - Delft University of Technology/CORE/python files/final"
+folder_path_user =  os.path.join(os.getcwd(), "outputs")
 
 # Directory for accessing the database and markers of the map. This may be on a server
 folder_path_server = os.path.dirname(os.path.realpath(__file__))

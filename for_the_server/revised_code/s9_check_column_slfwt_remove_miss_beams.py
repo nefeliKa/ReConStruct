@@ -26,8 +26,6 @@ from s7_refinement_functions import *
 #     grid_p_master = pickle.load(file)
 
 from pickle_commands import pickle_open
-grid_p_master = pickle_open(file_path=r'D:/OneDrive - Delft University of Technology/CORE/python files/revised_code/grid_master.pkl')
-dict_list = pickle_open(file_path=r'D:/OneDrive - Delft University of Technology/CORE/python files/revised_code/dict_list.pkl')
 # Record the start time
 # start_time = time.time()
 

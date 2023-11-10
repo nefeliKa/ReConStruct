@@ -18,8 +18,6 @@ pp = pprint.PrettyPrinter()
 
 from pickle_commands import pickle_open
 
-dict_list = pickle_open(file_path="D:/OneDrive - Delft University of Technology/CORE/python files/revised_code/dict_list.pkl")
-
 #specifying warehouses
 warehouses = ["Warehouse_1", "Warehouse_2", "Warehouse_3", "Warehouse_4", "Warehouse_5", "Warehouse_6", "Warehouse_7", "Warehouse_8"]
 
