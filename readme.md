@@ -1,7 +1,3 @@
-Certainly! Here's a revised version of the documentation for your `README.md` file:
-
----
-
 # RE_CONC_STRUCT
 
 ## Introduction
@@ -32,19 +28,9 @@ These objectives collectively aim to streamline the process of generating concre
 ### 1. Python
 
 Ensure that Python is installed on your machine. You can download Python from the [official Python website](https://www.python.org/downloads/).
+Create a virtual environment and activate it. [Here](https://docs.python.org/3/library/venv.html), you can find instructions on how to do this.
 
 ### 2. Libraries
-
-The required libraries for this script are:
-
-- **pandas:** Data manipulation library.
-- **numpy:** Numerical operations library.
-- **time:** Library for tracking execution time.
-- **json:** Library for JSON handling.
-- **pickle:** Library for data serialization.
-- **os:** Library for operating system-related functions.
-- **pprint:** Library for pretty-printing data structures.
-- **math:** Library for mathematical functions.
 
 To install the libraries, run:
 
@@ -57,7 +43,7 @@ pip install -r requirements.txt
 ### Directory Structure
 
 ```plaintext
-Your_Project_Directory/Reconstruct
+Reconstruct
 ├── for_the_server/
     └── revised_code/
         ├── main.py
@@ -70,38 +56,32 @@ Your_Project_Directory/Reconstruct
     └──maps/
 ```
 
-- **main.py:** Your Python script containing the provided code.
+- **main.py:** Starting point.
 - **csv_set/:** A directory to store the generated CSV files.
 - **Dataframe2.csv:** Input CSV file (change the name accordingly).
 
-### User Input
-
-1. Open the script (`your_code.py`) in a text editor or an integrated development environment (IDE) like Visual Studio Code or PyCharm.
-2. Locate the section with user inputs and modify the following variables as needed:
-   - `folder_path_user:` Specify the directory where output files will be saved.
-   - `folder_path_server:` Set the directory for accessing the database and map markers.
-   - `minimum_nohouses:` Choose the required number of houses.
-   - `lat_1, lon_1:` Specify the latitude and longitude for the location of houses.
-   - `x_axis_length, y_axis_length:` Set the dimensions of the houses.
-   - `axis_tolerance:` Define the tolerance for deviation from given dimensions.
 
 ## Running the Code
 
-1. **Import the libraries from the `requirements.txt`.**
 2. **Run Dataframe_Generator script:**
-   - If you don’t have a dataframe or want to generate one, run the `Dataframe_Generator` script.
-   - If you want to work with an existing dataframe, open the `Dataframe2.csv` file and ensure it has a similar structure to the provided file.
+   - If you don’t have a dataframe or want to generate one, run the `s1_Dataframe_generator.py` script.
+   - If you want to work with an existing dataframe, you can cross-check it with `Dataframe2.csv` to validate your dataframe.
 3. **Run `main.py` to generate possible grids:**
-   - Input your parameters according to the script's prompts.
+   - Input your parameters according to the [script's prompts](#User-Prompts)
    - Check the generated graph for the grids of interest.
    - Fill in the grid of interest in the terminal.
 4. **Check the files generated and stored in the folder `outputs`.**
 5. **Run Hops to visualize the grid:**
    - Install Rhino and Grasshopper.
    - Open the `Hops` folder and run the `Hops2.py` script in Python.
-   - Open the Grasshopper script file.
+   - Open the Grasshopper script file in Grasshopper (`grasshopper/RE_CONC_STRUCT visualization.gh`)
    - On the Grasshopper script, insert the folder path to the `outputs` folder.
-   - Toggle the number of sliders to check all the generated grids.
+   - Input the grid number you want to generate.
+
+<p align="center">
+<img src="grasshopper.jpg" alt="drawing" width="600"/>
+</p>
+
 
 ## User Prompts
 
@@ -117,7 +97,7 @@ Your_Project_Directory/Reconstruct
 
 ## Review Results
 
-After the code execution, review the results, including the best grids for distance and weight. Confirm if you want to reserve the stock. If yes, the Excel sheets with reserved stock information will be generated in the `final_csv_set/` directory.
+After the code execution, review the results, including the best grids for distance and weight. Confirm if you want to reserve the stock. If yes, the Excel sheets with reserved stock information will be generated in the `csv_set` directory.
 
 ## Additional Tips
 

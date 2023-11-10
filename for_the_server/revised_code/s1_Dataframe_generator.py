@@ -3,6 +3,7 @@ import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 from main import warehouses
+import os
 
 #create base dataframe
 index_values = range(50000)
@@ -169,7 +170,8 @@ df['IDs'] = 'ID_' + df['IDs'].astype(str)
 #df.index.name = 'IDs'
 
 #SAVE DATAFRAME TO CSV
-df.to_csv(r"D:/OneDrive - Delft University of Technology/CORE/python files/revised_code/Dataframe2.csv",index=None)
+folder_path_user =  os.path.join(os.getcwd(), "outputs")
+df.to_csv(os.path.join(folder_path_user, "Dataframe2.csv"), index=None)
 
 #print(df)
 # can you list down all the assumptions you made
